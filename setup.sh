@@ -3,19 +3,25 @@
 echo "[1] Install oh-my-zsh"
 curl -L https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh | sh
 
+
+
 echo "\n[2] Copying files to root directory"
 
 echo "\taliases > ~/.aliases"
-cp aliases ~/.aliases
+cp -v aliases ~/.aliases
 
 echo "\tzshrc > ~/.zshrc"
-cp zshrc ~/.zshrc
+cp -v zshrc ~/.zshrc
 
 echo "\tvimrc > ~/.vimrc"
-cp vimrc ~/.vimrc
+cp -v vimrc ~/.vimrc
+
+echo "Creating ~/.ohmyzshcustom directory"
+cp -vr ohmyzshcustom/ ~/.oh-my-zshcustom
 
 echo "\n[3] Setting git colors"
 git config --global color.ui always
+
 
 echo ""
 while true; do
